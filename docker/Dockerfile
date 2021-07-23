@@ -22,5 +22,10 @@ RUN python -m pip install --upgrade pip
 COPY ./requirements.txt /tmp/dbt/requirements.txt
 RUN cd /tmp/dbt && pip install -r requirements.txt
 
+# Copy dbt profiles.yml file
+COPY ./profiles.yml /tmp/dbt/
+RUN mkdir -p /root/.dbt && \
+    mv /tmp/dbt/profiles.yml /root/.dbt/
+
 ENTRYPOINT ["tail"]
 CMD ["-f","/dev/null"]
