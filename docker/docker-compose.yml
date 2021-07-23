@@ -4,19 +4,16 @@ services:
     image: postgres
     container_name: dbt-postgres
     ports:
-       - "5432:5432"
+      - "5432:5432"
     environment:
-       - POSTGRES_USER=postgres
-       - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     volumes:
-       - ../dataset:/tmp/dataset
-       - ../sql/create_and_fill_tables.sql:/docker-entrypoint-initdb.d/create_and_fill_tables.sql    
+      - ../dataset:/tmp/dataset
+      - ../sql/create_and_fill_tables.sql:/docker-entrypoint-initdb.d/create_and_fill_tables.sql
   dbt:
     image: dbt
-    container_name: dbt 
+    container_name: dbt
     build: ./
-    environment:
-       - POSTGRES_USER=postgres
-       - POSTGRES_PASSWORD=postgres
     volumes:
-       - ${LOCAL_DBT_PATH}:/root/dbt/
+      - ${LOCAL_DBT_PATH}:/root/dbt/
