@@ -6,5 +6,6 @@ jaffle_shop:
       host: host.docker.internal
       user: postgres
       password: postgres
+      schema: jaffle_shop
       port: 5432
       dbname: raw
