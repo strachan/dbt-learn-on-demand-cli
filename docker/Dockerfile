@@ -13,7 +13,8 @@ RUN mkdir -p /root/.ssh && \
     build-essential \
     locales \
     unzip \
-    less
+    less \
+    postgresql-client
 
 # Upgrade pip
 RUN python -m pip install --upgrade pip

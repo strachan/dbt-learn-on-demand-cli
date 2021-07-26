@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Create folder for dataset
-mkdir ./dataset
+mkdir -p ./dataset
 
 # Download the dataset
 curl http://dbt-tutorial-public.s3-us-west-2.amazonaws.com/jaffle_shop_orders.csv --output ./dataset/shop_orders.csv

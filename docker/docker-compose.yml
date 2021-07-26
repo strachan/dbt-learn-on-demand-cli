@@ -15,5 +15,7 @@ services:
     image: dbt
     container_name: dbt
     build: ./
+    ports:
+      - "8080:8080"
     volumes:
       - ${LOCAL_DBT_PATH}:/root/dbt/
